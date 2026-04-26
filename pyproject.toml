@@ -1,7 +1,7 @@
 [project]
 name = "seep-playground"
 version = "0.1.0"
-description = "Add your description here"
+description = "An engine for the card game seep"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
@@ -38,14 +38,13 @@ select = [
   "S",
   "D",
   "A",
-  "TCH",
+  "TC",
   "ARG",
 ]
 ignore = ["D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107"]
 
 [tool.ruff.lint.extend-per-file-ignores]
 "tests/**/test_*.py" = ["S101"]
-"tests/**" = ["INP001"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
