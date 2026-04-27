@@ -1,0 +1,44 @@
+# Python-generated files
+__pycache__/
+*.py[ocd]
+build/
+dist/
+wheels/
+*.egg-info
+.installed.cfg
+.eggs/
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Tool Caches
+.pytest_cache/
+.ruff_cache/
+.pyright/
+.mypy_cache/
+.tox/
+
+# Coverage
+.coverage
+.coverage.*
+coverage.*
+htmlcov/
+
+# SQLite
+*.db
+*.sqlite3
+
+# Environment / Secrets
+.env
+.env.*
+.secrets
+
+# Editor / OS (Keep repo agnostic)
+.vscode/
+.idea/
+.history/
+.DS_Store
+Thumbs.db

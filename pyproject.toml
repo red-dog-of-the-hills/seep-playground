@@ -1,0 +1,73 @@
+[project]
+name = "seep-playground"
+version = "0.1.0"
+description = "An engine for the card game seep"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "prek>=0.3.10",
+  "pyright>=1.1.409",
+  "pytest>=9.0.3",
+  "pytest-cov>=7.1.0",
+  "pytest-sugar>=1.1.1",
+  "ruff>=0.15.12",
+  "rust-just>=1.50.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+  "E",
+  "F",
+  "B",
+  "I",
+  "UP",
+  "SIM",
+  "C4",
+  "PIE",
+  "RUF",
+  "S",
+  "D",
+  "A",
+  "TC",
+  "ARG",
+]
+ignore = ["D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107"]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"tests/**/test_*.py" = ["S101"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pyright]
+typeCheckingMode = "strict"
+pythonVersion = "3.14"
+reportImplicitOverride = "error"
+reportUnnecessaryTypeIgnoreComment = "error"
+venvPath = "."
+venv = ".venv"
+extraPaths = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra -v -W error --strict-markers --strict-config"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+fail_under = 90
